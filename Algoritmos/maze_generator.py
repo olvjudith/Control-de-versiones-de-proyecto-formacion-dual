@@ -94,7 +94,15 @@ def maze_generator(rows, cols):
 
         new_coord = fringe.pop()
         if new_coord != current_coord:
-            current_maze = remove_wall(current_maze, current_coord[0], current_coord[1], new_coord[0], new_coord[1])
+            if new_coord in successors:
+                current_maze = remove_wall(current_maze, current_coord[0], current_coord[1], new_coord[0], new_coord[1])
+            else:
+                successrs = get_successors(new_coord[0] , new_coord[1] , rows, cols)
+                random.shuffle(successors)
+                for s in successors:   
+                    if s in expanded_coord:
+                        current_coord=see
+                current_maze = remove_wall(current_maze, current_coord[0], current_coord[1], new_coord[0], new_coord[1])
         current_coord = new_coord
 
         if is_goal_state(current_state):
