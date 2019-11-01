@@ -1,0 +1,1 @@
+En esta actualización se incluye sólo el documento para el proyecto de comunicación serial SPI
