@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 10
+#Progress monitor hint: 17
 first : all
 -include ../makefile.init
 
@@ -14,9 +14,15 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
--include Project_Settings/Linker_Files/subdir.mk
+-include Generated_Code/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
--include src/subdir.mk
+-include SDK/platform/devices/S32K144/startup/subdir.mk
+-include SDK/platform/devices/subdir.mk
+-include SDK/platform/drivers/src/clock/S32K1xx/subdir.mk
+-include SDK/platform/drivers/src/clock/subdir.mk
+-include SDK/platform/drivers/src/interrupt/subdir.mk
+-include SDK/platform/drivers/src/pins/subdir.mk
+-include Sources/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -29,38 +35,38 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Intento1.elf \
+WindowLifter.elf \
 
 EXECUTABLES_QUOTED += \
-"Intento1.elf" \
+"WindowLifter.elf" \
 
 EXECUTABLES_OS_FORMAT += \
-Intento1.elf \
+WindowLifter.elf \
 
 SECONDARY_SIZE += \
-Intento1.siz \
+WindowLifter.siz \
 
 SECONDARY_SIZE_QUOTED += \
-"Intento1.siz" \
+"WindowLifter.siz" \
 
 SECONDARY_SIZE_OS_FORMAT += \
-Intento1.siz \
+WindowLifter.siz \
 
 
 # All Target
-all: warning-messages explicit-dependencies Intento1.elf secondary-outputs
+all: warning-messages explicit-dependencies WindowLifter.elf secondary-outputs
 
 # Tool invocations
-Intento1.elf: $(OBJS) C:/Users/LORE/Dropbox/uaq/7osemestre/FormacionDualContinental/S32_design/Intentoslave/Project_Settings/Linker_Files/S32K1xx_flash.ld $(USER_OBJS)
+WindowLifter.elf: $(OBJS) C:/Users/LORE/Music/WindowLifter-master/WindowLifter-master/Project_Settings/Linker_Files/S32K144_64_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #11 $@'
+	@echo 'Executing target #18 $@'
 	@echo 'Invoking: Standard S32DS C Linker'
-	arm-none-eabi-gcc -o "Intento1.elf" "@Intento1.args"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
+	arm-none-eabi-gcc -o "WindowLifter.elf" "@WindowLifter.args"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Intento1.siz: $(EXECUTABLES)
-	@echo 'Executing target #12 $@'
+WindowLifter.siz: $(EXECUTABLES)
+	@echo 'Executing target #19 $@'
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley $(EXECUTABLES)
 	@echo 'Finished building: $@'
@@ -68,7 +74,7 @@ Intento1.siz: $(EXECUTABLES)
 
 # Other Targets
 clean:
-	-$(RM) ./*/*.d ./*/*/*.d  ./*/*.o ./*/*/*.o  $(SECONDARY_SIZE_QUOTED) $(EXECUTABLES_QUOTED)
+	-$(RM) ./*/*.d ./*/*/*/*/*/*.d ./*/*/*/*/*/*/*.d ./*/*/*/*.d  ./*/*.o ./*/*/*/*/*/*.o ./*/*/*/*/*/*/*.o ./*/*/*/*.o ./*/*/*.o  $(SECONDARY_SIZE_QUOTED) $(EXECUTABLES_QUOTED)
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_SIZE)
