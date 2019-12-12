@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 import pyaudio
 import wave
@@ -69,6 +70,7 @@ for comando in range(1,C+1):
         waveFile.close()
         '''
         Se crea y se guarda el archivo de audio.
+'''
 '''
 ciclo for grabacion in range (1,Total_g)
 '''
