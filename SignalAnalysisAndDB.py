@@ -125,7 +125,7 @@ class SignalAnalysisDBSteps():
     '''
     Esta funcion obtiene la correlación entre dos audios.
     Argumentos:
-        audioBase(String): Señal base para la correlación.                        *********checar en el blog
+        audioBase(String): Señal base para la correlación.                        
         AudioaComparar(String): Señal a comparar con la señal base.
     Retornos:
         correlacionf(Float): Valor de la correlación entre las dos señales.
